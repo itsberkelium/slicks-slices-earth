@@ -34,11 +34,11 @@ const generateOrderEmail = ({ order, total }) => `<div>
   </div>`;
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
+  host: process.env.MAIL_HOST,
   port: 587,
   auth: {
-    user: 'robert.hudson@ethereal.email',
-    pass: 'KBCKbwMc7GAkdhVBev',
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
 });
 
